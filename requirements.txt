@@ -1,0 +1,4 @@
+playwright==1.63.0
+mlxtend==0.25.0
+pandas>=2.2
+matplotlib>=3.8

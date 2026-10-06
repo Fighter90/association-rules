@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+data/
+results/
+figures/
+*_session.json
+.DS_Store

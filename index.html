@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HW4 — Association Rules</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <noscript>
+    <p class="load-error">JavaScript required — please enable scripts for this directory and reload.</p>
+  </noscript>
+  <header class="site-header">
+    <h1>HW4 — Association Rules</h1>
+    <p class="subtitle">UCI Online Retail (dataset 352) cleaned to 17,080 baskets.</p>
+    <section id="dataset-summary" aria-labelledby="dataset-summary-heading" class="summary">
+      <h2 id="dataset-summary-heading">Dataset summary</h2>
+      <div id="dataset-summary-body">
+        <p class="empty-state">Loading dataset…</p>
+      </div>
+    </section>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-labelledby="controls-heading">
+      <h2 id="controls-heading">Controls</h2>
+
+      <div class="control">
+        <label for="min-support">
+          Minimum support
+          <output id="min-support-value" for="min-support">1.0%</output>
+        </label>
+        <input type="range" id="min-support" name="min-support"
+               min="0.5" max="10" step="0.5" value="1"
+               aria-describedby="min-support-hint">
+        <p class="hint" id="min-support-hint">0.5% – 10% of baskets.</p>
+      </div>
+
+      <div class="control">
+        <label for="min-confidence">
+          Minimum confidence
+          <output id="min-confidence-value" for="min-confidence">30%</output>
+        </label>
+        <input type="range" id="min-confidence" name="min-confidence"
+               min="10" max="100" step="5" value="30"
+               aria-describedby="min-confidence-hint">
+        <p class="hint" id="min-confidence-hint">10% – 100%.</p>
+      </div>
+
+      <div class="button-row">
+        <button type="button" id="run-rules">Run rules</button>
+        <button type="button" id="run-tests" class="secondary">Run tests</button>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite">Loading…</p>
+
+      <h3 id="test-log-heading">Test log</h3>
+      <pre id="testLog" class="test-log" tabindex="0" aria-labelledby="test-log-heading">Press “Run tests” to execute the self-checks.</pre>
+    </aside>
+
+    <main>
+      <section aria-labelledby="results-heading">
+        <h2 id="results-heading">Rules</h2>
+        <div id="results">
+          <p class="empty-state">No rules yet. Set the thresholds and press “Run rules”.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="detail-heading" class="panel">
+        <h2 id="detail-heading">Selected rule</h2>
+        <div id="rule-detail">
+          <p class="empty-state">Click a rule row to inspect it.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="example-heading" class="panel">
+        <h2 id="example-heading">Worked example</h2>
+        <div id="worked-example"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="transactions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
